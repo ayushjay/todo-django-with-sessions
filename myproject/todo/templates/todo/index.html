@@ -1,0 +1,18 @@
+{% extends "todo/layout.html" %}
+
+{% block body %}
+{% if tasks %}
+
+ <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ul>
+{% else %}
+<h3>Tasks not put</h3>
+
+{% endif %}
+
+<a href="{% url 'todo:add' %}">Add a New Task</a>
+{% endblock %}
+
